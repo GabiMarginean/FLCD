@@ -1,0 +1,49 @@
+program = "~" [decllist] [stmt] "~"
+
+decllist = declaration | declaration "," decllist
+
+declaration = "decl" IDENTIFIER type [":=" expression]
+
+type = type1 | arraydecl
+
+type1 = "bool" | "char" | "int" | "real"
+
+arraydecl = "decl" IDENTIFIER type "[]"
+
+dtypedecl = "dtype" IDENTIFIER ":" {decllist} "end"
+
+
+
+stmtlist = stmt | stmt ";" stmtlist
+
+stmt = simplstmt | structstmt
+
+simplstmt = assignstmt | iostmt
+
+assignstmt = assign1 | assign2
+assign1 = IDENTIFIER ":=" expression
+assign2 = IDENTIFIER ":" ((("+"|"-") expression) | ("++"|"--"))
+
+expression = expression ("+" | "-") term | term
+term = term ("*" | "/" | "%") factor | factor
+factor = "(" expression ")" | IDENTIFIER
+
+iostmt = ("prnt" | "read") (idlist | expression)
+
+idlist = IDENTIFIER | IDENTIFIER "," idlist 
+
+structstmt = cmpdstmt | ifstmt | whilestmt
+
+cmpdstmt = ("begin") stmtlist "end"
+
+
+ifstmt = "verif" compcond "then" stmt ["else" stmt] 
+whilestmt = "whilst" compcond "do" stmt
+forstmt = "for" (declaration | assignstmt) "," compcond "," assignstmt "do"
+retstmt = "ret" [expression]
+
+compcond = condition | condition ("and" | "or") compcond
+condition = cond | negcond
+negcond = "not" cond
+cond = expression RELATION expression 
+RELATION = "<" | "<=" | "=" | "<>" | ">=" | ">"

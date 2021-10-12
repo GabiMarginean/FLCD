@@ -1,0 +1,19 @@
+~
+
+$ compute the sum of n numbers
+
+decl sum int := 0
+decl n int
+
+read n
+decl arr int[] := new int[n]
+
+for i := 1, i <= n, i :++ do:
+	read arr[i]
+
+for i := 1, i <= n, i :+ 1 do:
+	sum :+ arr[i]
+
+prnt sum
+
+~

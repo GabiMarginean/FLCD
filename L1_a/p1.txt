@@ -1,0 +1,23 @@
+~
+
+$ compute max of 3 numbers
+
+decl a int
+decl b int
+decl b int
+decl max int := 0
+
+read a, b, c
+
+verif a > b and a > c then:
+	max := a
+
+verif b > a and b > c then:
+	max := b
+
+verif c > a and c > b then:
+	max := c
+
+prnt max
+
+~

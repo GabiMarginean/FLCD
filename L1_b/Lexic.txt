@@ -1,0 +1,38 @@
+Alphabet:
+	a. Upper (A-Z) and lower case letters (a-z) of the English alphabet 
+	b. '_', '$', '~', '-', ':'
+	c. Decimal digits (0-9);
+
+a.Special symbols, representing:
+	- operators: + - * / := = < > <= >= <> not and or
+	- separators: [] {} : ; space $ $- -$ , newline
+	- reserved words:
+		decl int char bool dtype real
+		new read prnt
+		for do
+		verif then else
+		end
+		ret
+
+b.identifiers
+	identifier = (letter | undersc) | (letter | undersc){letter}{digit}{undersc}
+	letter =  "a" | "b" | ... | A" | "B" | ... | "Z"
+	digit = "0" | "1" |...| "9"
+	undersc = "_"
+
+c.constants
+	1.integer 
+		digitnz = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" 
+		digit   = "0" | digitnz 
+		nbr = digitnz{digit}
+		int = "0" | ["-"] nbr
+
+	2.character 
+		char = letter | digit
+
+	3.string 
+		str = """string""" 
+		string = char{string} 
+
+	4. boolean
+		bool = "true" | "false"
