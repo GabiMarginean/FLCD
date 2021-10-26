@@ -44,7 +44,7 @@ Analyzes the source code and outputs the `sybmol table`, the `program informatio
 
   > This matches anything that is between two `"`
 
-- Boolean: `"(?i)^(true|false)$`
+- Boolean: `(?i)^(true|false)$`
 
   > This matches either `true` or `false`, ignoring the case
 
