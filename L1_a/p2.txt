@@ -5,11 +5,11 @@ $ verify if a number is prime
 decl n int
 decl div int := 3
 
-verif n / 2 != 0 then:
+verif n / 2 <> 0 then:
 	ret false
 
 whilst div * div < n do:
-	verif n / div != 0 then:
+	verif n / div <> 0 then:
 		ret false
 
 	div :+ 2 

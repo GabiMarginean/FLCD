@@ -4,7 +4,7 @@ def h(id):
 	return sum(map(ord, id))
 
 
-class ST:
+class SymbolTable:
 	def __init__(self, n = 100):
 		self._n = n
 		self._data = [[] for i in range(self._n)]
@@ -35,7 +35,7 @@ class ST:
 			return None
     
 
-st = ST()
+st = SymbolTable()
 
 ana_pos = st.pos("ana")
 print(st.pos("ana"))

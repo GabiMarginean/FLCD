@@ -4,7 +4,7 @@ $ compute max of 3 numbers
 
 decl a int
 decl b int
-decl b int
+decl c int
 decl max int := 0
 
 read a, b, c
