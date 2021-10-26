@@ -13,7 +13,10 @@
   This method is used to analyze `input_file` and will output two files:
 
   - `ST.out` containing the `symbol table`
+
   - `PIF.out`containing the `program information file`
+
+    
 
   > If any syntax error occur, those will be printed on the console in the form of:
   >
