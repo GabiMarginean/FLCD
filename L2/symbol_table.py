@@ -33,19 +33,8 @@ class SymbolTable:
 		except TypeError:
 			print("Index must be touple.")
 			return None
+
+	def __str__(self):
+		return "".join('{} -> {}\n'.format(i, bucket) for i, bucket in enumerate(self._data) if bucket)
     
 
-st = SymbolTable()
-
-ana_pos = st.pos("ana")
-print(st.pos("ana"))
-print(st.pos("are"))
-print(st.pos("ana"))
-print(st.pos("mere"))
-print(st.pos("mere"))
-
-print(st.get(ana_pos))
-print(st.get((99,99)))
-print(st.get((99)))
-print(st.get((99,88,88)))
-print(st.get((3, 1)))

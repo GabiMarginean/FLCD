@@ -1,8 +1,14 @@
+import sys
+sys.path.insert(1, '../L2')
+
 from symbol_table import SymbolTable
 from regex import *
 
-TOKEN_FILE = "token.in"
-SEP_FILE   = "separators.in"
+TOKEN_FILE = "input/token.in"
+SEP_FILE   = "input/separators.in"
+
+OUT_ST  = "output/ST.out"
+OUT_PIF = "output/PIF.out"
 
 class LexicalAnalyzer():
 
@@ -34,10 +40,10 @@ class LexicalAnalyzer():
 		return token
 
 	def _writeData(self):
-		with open("ST.out", 'w') as f:
+		with open(OUT_ST, 'w') as f:
 			f.write(str(self._st))
 
-		with open("PIF.out", 'w') as f:
+		with open(OUT_PIF, 'w') as f:
 			for item in self._pif:
 				f.write("%s\n" % str(item))
 
@@ -77,4 +83,4 @@ class LexicalAnalyzer():
 
 
 la = LexicalAnalyzer(TOKEN_FILE, SEP_FILE)
-la.analyze("../L1_a/p3.txt")
+la.analyze("../L1_a/p2.txt")

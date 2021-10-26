@@ -31,7 +31,8 @@ char
 bool
 dtype
 new 
-read 
+read
+whilst
 prnt
 for 
 do

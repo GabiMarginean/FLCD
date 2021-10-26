@@ -1,6 +1,6 @@
 # Lexical Analyzer
 
-> Analyzes the source code and outputs the `sybmol table`, the `program information file` and prints the syntax errors if any.
+Analyzes the source code and outputs the `sybmol table`, the `program information file` and prints the syntax errors if any.
 
 ## Interface
 
