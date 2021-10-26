@@ -18,11 +18,13 @@
 
     
 
-  > If any syntax error occur, those will be printed on the console in the form of:
+  > - If any syntax error occur, those will be printed on the console in the form of:
   >
-  > `Syntax Error: line 7 at: 'int@'`
+  >   `Syntax Error: line 7 at: 'int@'`
   >
-  > Otherwise the method will print `Lexically correct`
+  > - Otherwise the method will print:
+  >
+  >    `Lexically correct`
 
 
 
