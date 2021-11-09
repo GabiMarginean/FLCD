@@ -23,9 +23,6 @@
 	<polygon stroke="black" stroke-width="1" points="80.5,123.5 341.5,123.5"/>
 	<polygon fill="black" stroke-width="1" points="341.5,123.5 333.5,118.5 333.5,128.5"/>
 	<text x="197.5" y="144.5" font-family="Times New Roman" font-size="20">1-9</text>
-	<path stroke="black" stroke-width="1" fill="none" d="M 353.056,147.146 A 313.312,313.312 0 0 1 259.752,220.984"/>
-	<polygon fill="black" stroke-width="1" points="353.056,147.146 344.049,149.951 351.631,156.472"/>
-	<text x="315.5" y="209.5" font-family="Times New Roman" font-size="20">1-9</text>
 	<path stroke="black" stroke-width="1" fill="none" d="M 261.943,38.076 A 181.61,181.61 0 0 1 354.613,98.745"/>
 	<polygon fill="black" stroke-width="1" points="354.613,98.745 353.459,89.382 345.691,95.68"/>
 	<text x="318.5" y="52.5" font-family="Times New Roman" font-size="20">1-9</text>
