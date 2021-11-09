@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="303" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="32.5" cy="32.5" rx="30" ry="30"/>
+	<text x="23.5" y="38.5" font-family="Times New Roman" font-size="20">s0</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="271.5" cy="32.5" rx="30" ry="30"/>
+	<text x="262.5" y="38.5" font-family="Times New Roman" font-size="20">s1</text>
+	<polygon stroke="black" stroke-width="1" points="62.5,32.5 241.5,32.5"/>
+	<polygon fill="black" stroke-width="1" points="241.5,32.5 233.5,27.5 233.5,37.5"/>
+	<text x="108.5" y="23.5" font-family="Times New Roman" font-size="20">a-z, A-Z, _</text>
+</svg>

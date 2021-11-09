@@ -1,0 +1,18 @@
+s0 s1 s2
+s0
+s2 s1
+_a-xA-X0-9
+s0 -> s1 a-x
+s0 -> s1 A-X
+s0 -> s1 _
+s0 -> s2 a-x
+s0 -> s2 A-X
+s0 -> s2 _
+s1 -> s2 a-x
+s1 -> s2 A-X
+s1 -> s2 _
+s1 -> s2 0-9
+s2 -> s2 a-x
+s2 -> s2 A-X
+s2 -> s2 _
+s2 -> s2 0-9
