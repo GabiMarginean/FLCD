@@ -9,18 +9,18 @@
   where `inputFile` is a text file representing the finite automata in the following format:
 
   ```c
-  line_1 			= states_lst   							/* list of all states 										*/
-  line_2 			= state 										/* initial state 													*/
-  line_3		  = states_lst								/* final states 													*/
-  line_4 			= str												/* alphabet 															*/
-  rest_lines 	= state "->" state str		  /* transitions (from -> to value)					*/
+  line_1        = states_lst   			/* list of all states 					*/
+  line_2        = state.                          /* initial state                                        */
+  line_3        = states_lst			/* final states 					*/
+  line_4        = str				/* alphabet 						*/
+  rest_lines    = state "->" state str		/* transitions (from -> to value)			*/
   
   states_lst 	= state | states_lst
-  state 			= letter | (letter){letter}{digit}{lne}
-  letter 			=  "a" | "b" | ... | "A" | "B" | ... | "Z"
-  digit				= "0" | "1" |...| "9"
-  lne 				= "_" | "-"
-  str 				= {letter | digit | lne}
+  state           = letter | (letter){letter}{digit}{lne}
+  letter          =  "a" | "b" | ... | "A" | "B" | ... | "Z"
+  digit		= "0" | "1" |...| "9"
+  lne 		= "_" | "-"
+  str 		= {letter | digit | lne}
   ```
 
   > If a transition has multiple values/ranges ie. `a-z`, `A-Z`, `-`, a transition must be specified for each of them. For example the following two are equivalent:
@@ -31,7 +31,7 @@
   > s0 -> s1 _
   > ```
   >
-  > ![multiple-value-transition](/Users/gabimarginean/Coding/_UNI/3S1/FLCD/flcd_git/FLCD/L4/img/example.svg)
+  > ![multiple-value-transition](img/example.svg?raw=true "Multiple valued transition")
 
 - `accepts(sequence : str)`
 
@@ -101,13 +101,13 @@ In order to verify if a sequence is accepted, starting from the initial state, w
 
 ```python
 def accepts(self, string):
-		state = self.initial_state
-		for character in string:
-			if not state:
-				return False
-			state = self.get_next_node(state, character)
-      
-		return state in self.final_states
+	state = self.initial_state
+	for character in string:
+	   if not state:
+	      return False
+	   state = self.get_next_node(state, character)
+
+	return state in self.final_states
 ```
 
 
@@ -129,7 +129,7 @@ s1 -> s2 1-9
 s2 -> s2 0-9
 ```
 
-![integer-automata](/Users/gabimarginean/Coding/_UNI/3S1/FLCD/flcd_git/FLCD/L4/img/int.svg)
+![integer-automata](img/int.svg?raw=true "Integer automata")
 
 ## Identifier automata
 
@@ -156,4 +156,4 @@ s2 -> s2 _
 s2 -> s2 0-9
 ```
 
-![identifier-automata](/Users/gabimarginean/Coding/_UNI/3S1/FLCD/flcd_git/FLCD/L4/img/identif.svg)
+![identifier-automata](img/identif.svg?raw=true "Identifier automata")
