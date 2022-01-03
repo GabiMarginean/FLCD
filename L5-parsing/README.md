@@ -57,7 +57,7 @@ An LL(1) parser implemented in python.
 
   
 
-  - The class `ParserOutput` is a helper class that consists of a `Grammar` and a `Parser` and checks wether a sequence from a file is accepted or not and writes the resulting production string in a file . The input grammar and output file name are passed as parameters to when constructing an 'ParserOutput' object. If no output file name is passed then the result will be written to screen only.
+- The class `ParserOutput` is a helper class that consists of a `Grammar` and a `Parser` and checks wether a sequence from a file is accepted or not and writes the resulting production string in a file . The input grammar and output file name are passed as parameters to when constructing an 'ParserOutput' object. If no output file name is passed then the result will be written to screen only.
 
-    The method `check_sequence(sequence) ` is used to verify a sequence with the specified grammar.
+  The method `check_sequence(sequence) ` is used to verify a sequence with the specified grammar.
 
