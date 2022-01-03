@@ -1,6 +1,6 @@
 # Finite Automata
 
-
+https://github.com/GabiMarginean/FLCD/tree/main/L4
 
 ## Interface
 
@@ -9,18 +9,18 @@
   where `inputFile` is a text file representing the finite automata in the following format:
 
   ```c
-  line_1        = states_lst   			/* list of all states 					*/
-  line_2        = state.                          /* initial state                                        */
-  line_3        = states_lst			/* final states 					*/
-  line_4        = str				/* alphabet 						*/
-  rest_lines    = state "->" state str		/* transitions (from -> to value)			*/
+  line_1        = states_lst   						/* list of all states 						*/
+  line_2        = state             			/* initial state                	*/
+  line_3        = states_lst			  			/* final states 					     		*/
+  line_4        = str				 							/* alphabet 											*/
+  rest_lines    = state "->" state str		/* transitions (from -> to value)	*/
   
-  states_lst 	= state | states_lst
-  state           = letter | (letter){letter}{digit}{lne}
-  letter          =  "a" | "b" | ... | "A" | "B" | ... | "Z"
-  digit		= "0" | "1" |...| "9"
-  lne 		= "_" | "-"
-  str 		= {letter | digit | lne}
+  states_lst 		= state | states_lst
+  state         = letter | (letter){letter}{digit}{lne}
+  letter        =  "a" | "b" | ... | "A" | "B" | ... | "Z"
+  digit					= "0" | "1" |...| "9"
+  lne 					= "_" | "-"
+  str 					= {letter | digit | lne}
   ```
 
   > If a transition has multiple values/ranges ie. `a-z`, `A-Z`, `-`, a transition must be specified for each of them. For example the following two are equivalent:
@@ -103,9 +103,9 @@ In order to verify if a sequence is accepted, starting from the initial state, w
 def accepts(self, string):
 	state = self.initial_state
 	for character in string:
-	   if not state:
+	  if not state:
 	      return False
-	   state = self.get_next_node(state, character)
+	  state = self.get_next_node(state, character)
 
 	return state in self.final_states
 ```
