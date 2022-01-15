@@ -1,0 +1,93 @@
+%{ 	 
+    #include <math.h> 
+    #include "const.h"
+
+    int lines = 1;
+    int ST_pos = 0;
+    char ST[10000] = "";
+    char PIF[10000] = "";
+
+    void addToST(char* tkn){
+        strcat(ST, tkn);
+        strcat(ST, "\n");
+    }
+
+    void addToPIF(char* tkn){
+        strcat(PIF, tkn);
+        strcat(PIF, "\n");
+    }
+%} 
+%option noyywrap
+%option noinput nounput
+%option caseless
+
+INTEGER         ^[-+]?[0-9]+$
+CHAR            [a-zA-Z0-9]$
+STR             \"(\\.|[^"\\])*\"
+BOOL            ^(true|false)$
+ID              ^[_a-zA-Z][_a-zA-Z0-9]*$    
+
+TYPE            ^(bool|char|int|real)$
+RELATION        ^(<|<=|=|<>|>=|>)$
+LOGIC           ^(not|and|or)$
+KWORD           ^(decl|dtype|new|read|prnt|for|do|verif|then|else|end|ret)$
+OPERATOR        ^(:=|+|-|*|/|=|)$
+
+%%
+
+[ \t]           {printf("Whitespace: '%s'\n", yytext);}
+[\n]            {printf("Newline: '%s'\n", yytext); lines++;}
+
+{TYPE}          {printf( "An TYPE: %s\n", yytext ); addToPIF(yytext);}
+
+{LOGIC}         {printf( "An LOGIC: %s\n", yytext ); addToPIF(yytext);}
+
+{KWORD}         {printf( "An KWORD: %s\n", yytext ); addToPIF(yytext);}
+
+{RELATION}      {printf( "An relational operator: %s\n", yytext );addToPIF(yytext);}
+
+
+{INTEGER}       {printf( "An INTEGER: %s\n", yytext ); addToST(yytext);}
+
+{CHAR}          {printf( "A CHAR: %s\n", yytext ); addToST(yytext);}
+
+{STR}           {printf( "A STR: %s\n", yytext ); addToST(yytext);}
+
+{BOOL}          {printf( "A BOOL: %s\n", yytext ); addToST(yytext);}
+
+{ID}            {printf( "An identifier: %s\n", yytext ); addToST(yytext);}
+
+
+"["             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+"]"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+"{"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+"}"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+":"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+";"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+"$"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+","             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+"~"             {printf( "Separator: %s\n", yytext ); addToPIF(yytext);}
+
+
+"$"[^}\n]*      /* eat up one-line comments */ 
+
+		 
+.               {printf("Eroare line %d:'%s'\n", lines, yytext); return -1;}
+
+<<EOF>>         {printf("Symbol table: \n%s", ST); printf("PIF: \n%s", PIF);}
+
+%% 
+
+int main(int argc, char **argv)
+{
+    ++argv;
+    --argc; /* skip over program name */ 
+
+    if ( argc > 0 ) 
+        yyin = fopen(argv[0], "r"); 
+    else 
+        yyin = stdin; 
+        
+    yylex();
+    return 0;
+}
